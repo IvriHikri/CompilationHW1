@@ -26,6 +26,8 @@ int convertHexToDec(char ch)
         return ch - '0';
     if (ch >= 'A' && ch <= 'F')
         return ch - 'A' + 10;
+    if (ch >= 'a' && ch <= 'f')
+        return ch - 'a' + 10;
 
     return -1;
 }
@@ -79,7 +81,7 @@ void handleString()
                 {
                     const char hex1 = content[i + 2];
                     const char hex2 = content[i + 3];
-                    if (hex1 >= '0' && hex1 <= '7' && ((hex2 >= 'A' && hex2 <= 'F') || (hex2 >= '0' && hex2 <= '9')))
+                    if (hex1 >= '0' && hex1 <= '7' && ((hex2 >= 'A' && hex2 <= 'F') || (hex2 >= '0' && hex2 <= '9') || (hex2 >= 'a' && hex2 <='f')))
                     {
                         int num1 = convertHexToDec(hex1);
                         int num2 = convertHexToDec(hex2);
