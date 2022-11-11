@@ -119,6 +119,15 @@ void handleString()
         }
         else
         {
+            char to_insert= content[i];
+            if(to_insert < 0x20 || to_insert > 0x7E)
+            {
+                if(to_insert != 0x09 && to_insert != 0x0A && to_insert != 0x0D)
+                {
+                    printf("Error %c\n", to_insert);
+                    std::exit(0);
+                }
+            }
             buffer[indexbuff++] = content[i];
             i++;
         }
