@@ -137,10 +137,6 @@ void handleString()
     printf("%d STRING %s\n", yylineno, buffer);
 }
 
-void handleComment()
-{
-}
-
 void handleError(int t)
 {
     if (t == ILEAGAL_CHAR)
